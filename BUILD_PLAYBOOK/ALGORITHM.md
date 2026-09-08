@@ -6,7 +6,16 @@ Valuora from the `01_PRODUCT` vision through to a running product.
 **How to use this document:** You are the boss. You only ever:
 
 1. **Open an opencode session in the `Valuora` folder** (agents load from `.opencode/`).
-2. **Tell `tech-lead` ONE goal** from the "You say" column below.
+   ```
+   cd C:\Users\USER\Documents\Valuora
+   opencode
+   ```
+   `tech-lead` is your **default agent** — there is no trigger command to type; you
+   are already talking to it the moment the session starts.
+2. **Paste ONE prompt** to `tech-lead` for the step you want. Use the exact copy-paste
+   prompts in `ONE_PAGE_TRIGGERS.md` (that file is the complete working script from
+   Global Setup to a finished, running product). You can also just say:
+   *"do the [step name] from BUILD_PLAYBOOK/ONE_PAGE_TRIGGERS.md"*.
 3. **Wait** — `tech-lead` reads the relevant spec and delegates to subagents
    (`backend-dept`, `valuation-engine`, `frontend-dept`, `data-methodology`,
    `qa-tester`, `security-auditor`, `docs-dept`).
@@ -14,7 +23,8 @@ Valuora from the `01_PRODUCT` vision through to a running product.
 
 You do **not** assign departments per folder. `tech-lead` does that. This document
 tells you *what mission to give tech-lead at each step* and *what gate must pass*
-before moving on.
+before moving on. If you only want the runnable prompts (not the analysis), use
+`ONE_PAGE_TRIGGERS.md` directly — it is the shortest path from setup to completion.
 
 ---
 
