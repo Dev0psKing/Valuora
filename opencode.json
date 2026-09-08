@@ -1,0 +1,50 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "tech-lead",
+  "instructions": ["AGENTS.md"],
+  "agent": {
+    "tech-lead": {
+      "description": "Tech lead / orchestrator. Coordinates the department subagents (valuation-engine, backend-dept, frontend-dept, data-methodology, security-auditor, qa-tester, docs-dept) and delegates work. Default agent.",
+      "mode": "primary"
+    },
+    "valuation-engine": {
+      "description": "Deterministic valuation & financial math: metrics, methods, weights, range, confidence.",
+      "mode": "subagent"
+    },
+    "backend-dept": {
+      "description": "Modular monolith backend, API, data layer, multi-tenancy.",
+      "mode": "subagent"
+    },
+    "frontend-dept": {
+      "description": "UI: Next.js/React/Tailwind dashboard, financial entry, valuation, reports, AI explanations.",
+      "mode": "subagent"
+    },
+    "data-methodology": {
+      "description": "Benchmarks, normalization, outlier detection, statistics.",
+      "mode": "subagent"
+    },
+    "security-auditor": {
+      "description": "Security & compliance review. Read-only.",
+      "mode": "subagent",
+      "permission": {
+        "edit": "deny",
+        "bash": { "git *": "allow", "*": "deny" }
+      }
+    },
+    "qa-tester": {
+      "description": "Tests: financial formulas, regression, integration, security, frontend.",
+      "mode": "subagent"
+    },
+    "docs-dept": {
+      "description": "Documentation across 01_PRODUCT..07_LEGAL; strips wrap-around text.",
+      "mode": "subagent",
+      "permission": {
+        "bash": "deny",
+        "todowrite": "allow",
+        "question": "allow",
+        "webfetch": "allow",
+        "websearch": "allow"
+      }
+    }
+  }
+}
